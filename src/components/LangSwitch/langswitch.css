@@ -20,3 +20,11 @@
 .lang_button.active {
   color: #d4a245;
 }
+@media (max-width: 768px) {
+  .lang_button {
+    font-size: 18px;
+  }
+  .lang_container {
+  margin: 10px;
+}
+}
