@@ -1,0 +1,36 @@
+.footer {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+.contact_link {
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact_link:hover {
+  color: #d4a245;
+  transform: scale(1.1);
+}
+.footer_contacts {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.footer_title {
+  font-size: 24px;
+}
+.contact_link {
+  color: white;
+  transition: all 0.3s ease;
+  margin-left: 5px;
+}
+.contact_link svg {
+  height: auto;
+  width: 30px;
+}
+.footer_contacts div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

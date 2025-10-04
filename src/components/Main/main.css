@@ -1,0 +1,25 @@
+.main {
+  display: flex;
+  max-width: 90%;
+  margin: 40px auto;
+  flex-direction: column;
+}
+.main_text {
+  flex: 1;
+  font-size: 18px;
+}
+.main_text p {
+  margin-top: 0;
+}
+.main_info {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .main_info {
+    flex-direction: column;
+  }
+  .main_text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,22 @@
+.lang_container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  margin: 15px 40px 15px 15px;
+}
+.lang_button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.lang_button:hover {
+  color: #d4a245;
+}
+
+.lang_button.active {
+  color: #d4a245;
+}
