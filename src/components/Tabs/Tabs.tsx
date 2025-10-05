@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
-import drums from "../../assets/images/drums.jpg";
-import drums_en from "../../assets/images/drums_en.jpg";
+import drums from "../../assets/images/drums.png";
 
 import "./tabs.css";
 
 const Tabs: React.FC = () => {
-  const { t, i18n } = useTranslation();
-  const currentLang = i18n.language;
+  const { t } = useTranslation();
 
   const [activeTab, setActiveTab] = useState<"technical" | "household">(
     "technical"
@@ -34,13 +32,19 @@ const Tabs: React.FC = () => {
       <div className={`tab_content ${activeTab}`}>
         {activeTab === "technical" && (
           <>
-            <Trans
-              i18nKey="technical_rider_content"
-              components={{ ul: <ul />, li: <li /> }}
-            />
+            <div>
+              <Trans
+                i18nKey="technical_rider_content"
+                components={{ ul: <ul />, li: <li /> }}
+              />
+              <Trans
+                i18nKey="technical_rider_content_drum"
+                components={{ ul: <ul />, li: <li /> }}
+              />
+            </div>
             <img
-              src={currentLang === "ua" ? drums : drums_en}
-              alt="Dj Madonna"
+              src={drums}
+              alt="drums"
               className="technical_img"
               onClick={() => setOpen(true)}
             />
@@ -54,7 +58,7 @@ const Tabs: React.FC = () => {
         )}
         {open && (
           <div className="overlay" onClick={() => setOpen(false)}>
-            <img src={currentLang === "ua" ? drums : drums_en} alt="Dj Madonna" className="overlay_img" />
+            <img src={drums} alt="Dj Madonna" className="overlay_img" />
           </div>
         )}
       </div>

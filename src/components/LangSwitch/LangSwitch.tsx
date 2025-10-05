@@ -24,6 +24,6 @@ const LangSwitch: React.FC = () => {
       </button>
     </div>
   );
-}
+};
 
 export default LangSwitch;

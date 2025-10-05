@@ -19,7 +19,7 @@ const Marquee: React.FC<MarqueeCanvasProps> = ({
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const fontSize = 60;
+    const fontSize = 55;
     const speed = 50;
 
     const width = canvas.parentElement?.clientWidth || 800;
@@ -30,7 +30,7 @@ const Marquee: React.FC<MarqueeCanvasProps> = ({
 
     const repeatedText = Array.from({ length: repeat })
       .map(() => text)
-      .join(' ');
+      .join('');
  
     ctx.font = `${fontSize}px 'Roboto', sans-serif`;
     ctx.lineWidth = 2;

@@ -1,8 +1,6 @@
 import LangSwitch from "../LangSwitch/LangSwitch";
 import logo from "../../assets/images/logo.png";
-
 import madonna from "../../assets/images/madonna.jpg";
-
 
 import "./header.css";
 

@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
 import InstagramIcon from "../../assets/icons/InstagramIcon";
 import TelegramIcon from "../../assets/icons/TelegramIcon";
+import logo from "../../assets/images/logo.png";
+
 import "./footer.css";
 
 const Footer: React.FC = () => {
@@ -35,6 +37,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
+      <img src={logo} alt="logo" className="footer_logo" />
     </footer>
   );
 };

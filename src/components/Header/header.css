@@ -14,12 +14,14 @@
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
   mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 85%,
     rgba(0, 0, 0, 0) 100%
   );
   -webkit-mask-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 1) 70%,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 85%,
     rgba(0, 0, 0, 0) 100%
   );
 }
@@ -92,6 +94,23 @@
   }
   .header_img {
     width: 100%;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3),
+      0 -4px 6px rgba(255, 255, 255, 0.3);
+
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 1) 85%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 1) 85%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
   .header_logo_mb {
     display: block;
