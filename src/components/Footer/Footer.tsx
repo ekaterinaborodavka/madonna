@@ -8,6 +8,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
+      <div className="footer_wrapper">
       <h3 className="footer_title">{t("contacts")}:</h3>
       <div className="footer_contacts">
           <div>
@@ -33,6 +34,7 @@ const Footer: React.FC = () => {
             </a>
           </div>
         </div>
+      </div>
     </footer>
   );
 };

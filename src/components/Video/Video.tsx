@@ -1,4 +1,5 @@
 import beggin from "../../assets/begin.mp4";
+import inter from "../../assets/inter.mp4";
 import suoermodel from "../../assets/supermodel.mp4";
 
 import "./video.css"
@@ -8,6 +9,11 @@ const Video: React.FC = () => {
     <div className="video_container">
       <video
         src={beggin}
+        controls
+        className="video_player"
+      />
+      <video
+        src={inter}
         controls
         className="video_player"
       />

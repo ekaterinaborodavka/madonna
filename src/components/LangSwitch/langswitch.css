@@ -25,6 +25,11 @@
     font-size: 18px;
   }
   .lang_container {
-  margin: 10px;
+    margin: 10px;
+  }
 }
+@media (max-width: 600px) {
+  .lang_container {
+    max-width: 30%;
+  }
 }

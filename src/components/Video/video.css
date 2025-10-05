@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: space-around;
   margin: 30px 0;
+  flex-wrap: wrap;
 }
 .video_player {
   width: 30%;
@@ -10,5 +11,16 @@
 @media (max-width: 900px) {
   .video_player {
     width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .video_player {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .video_container {
+    flex-direction: column;
+    gap: 15px;
   }
 }
