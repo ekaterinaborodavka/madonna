@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       <div className="footer_wrapper">
       <h3 className="footer_title">{t("contacts")}:</h3>
       <div className="footer_contacts">
-          <div>
+          <div className="link_wrapper">
             <p className="link_text">{t("Follow me")}: </p>
             <a
               href="https://www.instagram.com/_dj__madonna"
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               <InstagramIcon />
             </a>
           </div>
-          <div>
+          <div className="link_wrapper">
             <p className="link_text">{t("Organization")}: </p>
             <a
               href="https://t.me/dj_madonna_cooperation"

@@ -39,3 +39,15 @@
 .footer_logo {
   width: 150px;
 }
+@media (max-width: 768px) {
+  .link_wrapper {
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+@media (max-width: 560px) {
+  .link_wrapper {
+    width: 80%;
+  }
+}
