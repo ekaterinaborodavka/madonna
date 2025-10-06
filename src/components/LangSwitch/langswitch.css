@@ -11,6 +11,7 @@
   color: white;
   cursor: pointer;
   transition: color 0.3s;
+  text-transform: uppercase;
 }
 
 .lang_button:hover {

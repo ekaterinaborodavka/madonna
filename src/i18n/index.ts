@@ -4,8 +4,9 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locales/en.json';
 import ua from './locales/ua.json';
+import ru from './locales/ru.json';
 
-const resources = { en: { translation: en }, ua: { translation: ua } };
+const resources = { en: { translation: en }, ua: { translation: ua }, ru: { translation: ru } };
 
 i18n
   .use(LanguageDetector)

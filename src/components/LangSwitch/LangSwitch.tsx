@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import "./langswitch.css";
 
+const langs = ["en", "ua", "ru"];
+
 const LangSwitch: React.FC = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
@@ -10,18 +12,15 @@ const LangSwitch: React.FC = () => {
 
   return (
     <div className="lang_container">
-      <button
-        className={`lang_button ${currentLang === "en" ? "active" : ""}`}
-        onClick={() => changeLanguage("en")}
-      >
-        EN
-      </button>
-      <button
-        className={`lang_button ${currentLang === "ua" ? "active" : ""}`}
-        onClick={() => changeLanguage("ua")}
-      >
-        UA
-      </button>
+      {langs.map((lang, ind) => (
+        <button
+          key={ind}
+          className={`lang_button ${currentLang === lang ? "active" : ""}`}
+          onClick={() => changeLanguage(lang)}
+        >
+          {lang}
+        </button>
+      ))}
     </div>
   );
 };
