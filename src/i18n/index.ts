@@ -13,9 +13,9 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'ua',
+    fallbackLng: 'en',
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage', 'querystring', 'cookie'],
       caches: ['localStorage'],
     },
     interpolation: { escapeValue: false }
