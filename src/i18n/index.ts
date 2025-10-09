@@ -4,16 +4,15 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import en from './locales/en.json';
 import ua from './locales/ua.json';
-import ru from './locales/ru.json';
 
-const resources = { en: { translation: en }, ua: { translation: ua }, ru: { translation: ru } };
+const resources = { en: { translation: en }, ua: { translation: ua } };
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
+    fallbackLng: 'ua',
     detection: {
       order: ['localStorage', 'querystring', 'cookie'],
       caches: ['localStorage'],
