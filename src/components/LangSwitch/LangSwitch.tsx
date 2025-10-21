@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 
 import "./langswitch.css";
 
-const langs = ["en", "ua"];
+const langs = ["en", "ua", "ru"];
 
 const LangSwitch: React.FC = () => {
   const { i18n } = useTranslation();
