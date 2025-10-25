@@ -71,20 +71,4 @@
     width: 70%;
     margin: 0 auto;
   }
-  .tabs_container {
-    border-bottom: 1px solid;
-    border-image: linear-gradient(
-        to right,
-        #a2682a 0%,
-        #be8c3c 8%,
-        #faf0a0 35%,
-        #ffffc2 40%,
-        #faf0a0 50%,
-        #be8c3c 67%,
-        #b17b32 77%,
-        #e1b453 93%,
-        #a4692a 100%
-      )
-      1;
-  }
 }
