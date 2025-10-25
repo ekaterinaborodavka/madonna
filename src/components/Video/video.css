@@ -4,9 +4,62 @@
   justify-content: space-around;
   margin: 30px 0;
   flex-wrap: wrap;
+  gap: 30px;
 }
 .video_player {
   width: 30%;
+}
+.video_title {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    #a2682a 0%,
+    #be8c3c 8%,
+    #faf0a0 35%,
+    #ffffc2 40%,
+    #faf0a0 50%,
+    #be8c3c 67%,
+    #b17b32 77%,
+    #e1b453 93%,
+    #a4692a 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.video_title::before,
+.video_title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    #a2682a 0%,
+    #be8c3c 8%,
+    #faf0a0 35%,
+    #ffffc2 40%,
+    #faf0a0 50%,
+    #be8c3c 67%,
+    #b17b32 77%,
+    #e1b453 93%,
+    #a4692a 100%
+  );
+  border-radius: 2px;
+}
+
+.video_title::before {
+  margin-right: 30px;
+}
+
+.video_title::after {
+  margin-left: 30px;
 }
 @media (max-width: 900px) {
   .video_player {
