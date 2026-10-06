@@ -35,10 +35,17 @@
 .tab_content ul {
   padding: 0px;
 }
-.technical_img {
+.technical_image_button {
   width: 40%;
-  cursor: pointer;
   margin-left: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.technical_img {
+  width: 100%;
+  display: block;
 }
 .overlay {
   position: fixed;
@@ -58,16 +65,27 @@
   max-height: 65%;
   border-radius: 5px;
 }
+.overlay_close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  border: 0;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 42px;
+  line-height: 1;
+}
 @media (max-width: 768px) {
   .technical {
     flex-direction: column;
   }
-  .technical_img {
+  .technical_image_button {
     width: 60%;
   }
 }
 @media (max-width: 600px) {
-  .technical_img {
+  .technical_image_button {
     width: 70%;
     margin: 0 auto;
   }

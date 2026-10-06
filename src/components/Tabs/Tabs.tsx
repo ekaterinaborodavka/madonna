@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import drums from "../../assets/images/drums.png";
 
@@ -11,6 +11,20 @@ const Tabs: React.FC = () => {
     "technical"
   );
   const [open, setOpen] = useState(false);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    closeButtonRef.current?.focus();
+
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [open]);
 
   return (
     <div className="tabs_container">
@@ -42,12 +56,14 @@ const Tabs: React.FC = () => {
                 components={{ ul: <ul />, li: <li /> }}
               />
             </div>
-            <img
-              src={drums}
-              alt="drums"
-              className="technical_img"
+            <button
+              type="button"
+              className="technical_image_button"
+              aria-label="Open drum rider image"
               onClick={() => setOpen(true)}
-            />
+            >
+              <img src={drums} alt="Drum rider" className="technical_img" />
+            </button>
           </>
         )}
         {activeTab === "household" && (
@@ -57,8 +73,28 @@ const Tabs: React.FC = () => {
           />
         )}
         {open && (
-          <div className="overlay" onClick={() => setOpen(false)}>
-            <img src={drums} alt="Dj Madonna" className="overlay_img" />
+          <div
+            className="overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Drum rider image"
+            onClick={() => setOpen(false)}
+          >
+            <button
+              ref={closeButtonRef}
+              type="button"
+              className="overlay_close"
+              aria-label="Close image"
+              onClick={() => setOpen(false)}
+            >
+              ×
+            </button>
+            <img
+              src={drums}
+              alt="Drum rider"
+              className="overlay_img"
+              onClick={(event) => event.stopPropagation()}
+            />
           </div>
         )}
       </div>
