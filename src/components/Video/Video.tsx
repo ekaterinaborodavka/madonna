@@ -24,6 +24,7 @@ const videos: { title: string; src: string }[] = [
 
 const Video: React.FC = () => {
   const { t } = useTranslation();
+  const isAndroid = /Android/i.test(navigator.userAgent);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const carouselViewportRef = useRef<HTMLDivElement>(null);
@@ -131,7 +132,7 @@ const Video: React.FC = () => {
                   <source src={v.src} type="video/mp4" />
                 </video>
                 <span className="video_name">{v.title}</span>
-                {playingVideo !== idx && (
+                {!isAndroid && playingVideo !== idx && (
                   <button
                     type="button"
                     className="video_play_button"
