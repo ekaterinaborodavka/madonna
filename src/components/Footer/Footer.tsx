@@ -11,8 +11,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="footer_wrapper">
-      <h3 className="footer_title">{t("contacts")}:</h3>
-      <div className="footer_contacts">
+        <h3 className="footer_title">{t("contacts")}:</h3>
+        <div className="footer_contacts">
           <div className="link_wrapper">
             <p className="link_text">{t("Follow me")}: </p>
             <a
@@ -33,6 +33,14 @@ const Footer: React.FC = () => {
               className="contact_link"
             >
               <TelegramIcon />
+            </a>
+            <a
+              href="https://www.instagram.com/dj_madonna_cooperation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact_link"
+            >
+              <InstagramIcon />
             </a>
           </div>
         </div>

@@ -1,19 +1,56 @@
 .video_container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
   margin: 30px 0;
-  flex-wrap: wrap;
-  gap: 30px;
+}
+.video_carousel {
+  position: relative;
+}
+.video_carousel_viewport {
+  height: min(62vw, 560px);
+  overflow: hidden;
+}
+.video_track {
+  position: relative;
+  height: 100%;
 }
 .video_card {
-  position: relative;
-  width: 30%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(34vw, 310px);
+  height: 100%;
   background: #131313;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.45s ease, opacity 0.45s ease, filter 0.45s ease;
+}
+.video_card.is-active {
+  z-index: 3;
+  transform: translateX(-50%);
+}
+.video_card.is-left,
+.video_card.is-right {
+  z-index: 2;
+  opacity: 0.72;
+  filter: brightness(0.65);
+  cursor: pointer;
+}
+.video_card.is-left {
+  transform: translateX(calc(-50% - min(27vw, 250px))) scale(0.78);
+}
+.video_card.is-right {
+  transform: translateX(calc(-50% + min(27vw, 250px))) scale(0.78);
+}
+.video_card.is-back {
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.62);
 }
 .video_player {
   width: 100%;
+  height: 100%;
   display: block;
+  object-fit: contain;
 }
 .video_name {
   position: absolute;
@@ -41,6 +78,29 @@
   cursor: pointer;
   font-size: 27px;
   line-height: 1;
+}
+.video_carousel_button {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #d4a245;
+  cursor: pointer;
+  font-size: 56px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+}
+.video_carousel_button_previous {
+  left: 4%;
+}
+.video_carousel_button_next {
+  right: 4%;
 }
 .video_title {
   width: 100%;
@@ -96,12 +156,57 @@
 }
 @media (max-width: 900px) {
   .video_card {
-    width: 40%;
+    width: min(38vw, 310px);
   }
 }
 @media (max-width: 768px) {
+  .video_carousel_viewport {
+    height: auto;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .video_carousel_viewport::-webkit-scrollbar {
+    display: none;
+  }
+  .video_track {
+    display: flex;
+    width: max-content;
+    height: auto;
+    gap: 16px;
+    padding: 0 7vw;
+  }
   .video_card {
-    width: 100%;
+    position: relative;
+    top: auto;
+    left: auto;
+    flex: 0 0 86vw;
+    width: 86vw;
+    height: min(153vw, 620px);
+    scroll-snap-align: center;
+    opacity: 1;
+    filter: none;
+    pointer-events: auto;
+    transform: none;
+  }
+  .video_card.is-active,
+  .video_card.is-left,
+  .video_card.is-right,
+  .video_card.is-back {
+    opacity: 1;
+    filter: none;
+    pointer-events: auto;
+    transform: none;
+  }
+  .video_carousel_button {
+    display: flex;
+    font-size: 40px;
+  }
+  .video_carousel_button_previous {
+    left: 8px;
+  }
+  .video_carousel_button_next {
+    right: 8px;
   }
 }
 @media (max-width: 600px) {
